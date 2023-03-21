@@ -1,4 +1,4 @@
-@if (Auth::id() == $user->id)
+
     @if (Auth::user()->is_favorite($micropost->id))
         {{-- お気に入り削除ボタンのフォーム --}}
         <form method="POST" action="{{ route('favorites.unfavorite', $micropost->id) }}">
@@ -14,4 +14,3 @@
             <button type="submit" class="btn btn-info btn-block normal-case">Favorite</button><!--test2-->
         </form>
     @endif
-@endif
